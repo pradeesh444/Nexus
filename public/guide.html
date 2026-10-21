@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nexus ERP — Presentation Guide</title><style>:root{font-family:Arial,Helvetica,sans-serif;color:#183c2b;background:#f2f6f3}body{max-width:950px;margin:35px auto;padding:38px 50px;background:white;line-height:1.65;border-top:8px solid #26714a}h1{font-size:32px;line-height:1.2}h2{font-size:23px;margin-top:36px;color:#236b43}h3{font-size:18px;margin-top:28px}p,li{font-size:16px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d6e2d9;padding:10px;text-align:left}th{background:#eaf2ec}pre{padding:18px;background:#eef5ef;overflow:auto}code{font-family:Consolas,monospace;font-size:14px}a{color:#1c7750}header{font-size:13px;color:#708979;margin-bottom:35px}.print-note{background:#edf5ec;padding:12px 18px}img{max-width:100%}@media(max-width:700px){body{margin:0;padding:25px 20px}table{display:block;overflow:auto}}@media print{html{background:white}p,li{font-size:11pt;line-height:1.5}h2{font-size:17pt;margin-top:24px}h3{font-size:13pt;margin-top:20px}td,th{padding:8px}.closing-section{break-inside:avoid}body{margin:0;padding:0;border:0;max-width:none}header,.print-note{display:none}h2,h3{break-after:avoid}tr,pre{break-inside:avoid}a{color:inherit}@page{size:A4;margin:18mm}}</style></head><body><header>NEXUS ERP · PRADEESH A · 310624104225</header><p class="print-note">Keep this page beside your demo. Use your browser’s Print command to save it as a PDF.</p><h1>Presentation guide for Pradeesh</h1>
+<h2>What the uploaded PPT asks for</h2>
+<p>The 10-slide zeroth-review deck proposes a centralized ERP for small and medium businesses. The stated stack is MongoDB, Express, React and Node.js. Its problem is disconnected departmental tools and duplicated records. Its scope is inventory, sales/invoicing, HR/attendance, finance/expenses, procurement/vendors, role-based dashboards and reporting. Payment gateways and external accounting are explicitly future work.</p>
+<p>The deck is a proposal, not evidence of completed experiments. Its benefits are expected benefits; do not present invented accuracy, speed or business savings. Its literature survey names broad categories and products but does not give exact academic references.</p>
+<h2>What to do before college</h2>
+<ol>
+<li>Extract the project and run <code>npm ci</code>, then <code>npm start</code>.</li>
+<li>Open <a href="http://localhost:4000">http://localhost:4000</a> and log in as <a href="mailto:owner@nexus.demo">owner@nexus.demo</a> / Demo@12345.</li>
+<li>Practise the steps below once. Keep the terminal and browser open.</li>
+<li>Confirm the storage badge: Local demo or MongoDB connected. Explain the mode honestly.</li>
+<li>If you want fresh sample data, stop the app, run <code>npm run reset-demo -- --confirm</code>, then <code>npm start</code> (local demo only).</li>
+<li>Keep the supplied presentation and screenshot images downloaded for a fallback if the projector or laptop has a problem.</li>
+<li>Read the viva answers. You should be able to explain the workflow and locate the code you are presenting.</li>
+</ol>
+<h2>Opening speech — about 45 seconds</h2>
+<p>“Good morning. I am Pradeesh A, and my project is a Centralized ERP Platform for Small and Medium Businesses. Small businesses often maintain inventory, sales, employee records and expenses in different spreadsheets. This creates duplicate work and makes it difficult to see the overall business position.</p>
+<p>My application brings five departments into a common workspace. The important feature is integration: when a sales order is confirmed, inventory decreases; when a purchase is received, inventory increases and Finance gets an expense. Different users receive access according to their role. I will demonstrate those workflows now.”</p>
+<p>If using default demo mode, add: “The application supports MongoDB. For this classroom run I am using its persistent local demo adapter, which works without a database installation.”</p>
+<h2>Live demonstration — about 7 minutes</h2>
+<h3>1. Dashboard — 45 seconds</h3>
+<p>Sign in as Owner. Point to sales, unpaid invoices, stock valuation and attendance. Explain that these values derive from module records. The period selector affects the sales KPI; the chart always shows the latest seven days. Counts for stock, attendance and payables describe the current state.</p>
+<p>Say: “These figures update when a transaction is saved. Other open sessions refresh approximately every 15 seconds.”</p>
+<h3>2. Inventory — 30 seconds</h3>
+<p>Open Inventory. Show the USB-C hub at 8 units and reorder level 12. Select Low stock. Explain that the warning comes from comparing the balance to the product&#39;s reorder level. Open the stock history to show where balances come from.</p>
+<h3>3. Sales — 90 seconds</h3>
+<p>Open Sales &amp; invoices, choose New sale, customer <strong>Horizon Studio</strong>, and add <strong>2 Wireless keyboards</strong>. Keep demonstration tax at 18%.</p>
+<p>Expected amount: 2 × ₹1,499 = ₹2,998; tax ₹539.64; total <strong>₹3,537.64</strong>.</p>
+<p>Create draft. Explain that a draft does not change stock. Confirm the order. Wireless keyboard stock goes from <strong>42 to 40</strong> in a fresh workspace. Mark paid. Open the invoice, then Print / Save PDF.</p>
+<p>Say: “The server calculates prices and validates stock. Confirmation changes stock, and payment changes cash collected.”</p>
+<h3>4. Procurement — 75 seconds</h3>
+<p>Open Procurement and the seeded <strong>PO-0001</strong>. It requests <strong>20 USB-C hubs</strong> from Chennai Tech Supplies for <strong>₹32,000</strong>. Approve it, then Receive stock and confirm the dialog.</p>
+<p>Open Inventory: USB-C hub stock changes from <strong>8 to 28</strong>. Open Finance: a <strong>₹32,000 unpaid procurement expense</strong> appears. Explain that one operation creates both changes. Do not claim a supplier payment has happened until you mark the expense paid.</p>
+<h3>5. HR and payroll — 60 seconds</h3>
+<p>Open People &amp; payroll, then Attendance. Mark Rahul P Present. Switch to Payroll, click Run payroll, select the current month, and Generate payroll entries.</p>
+<p>A fresh workspace creates <strong>6 salary records</strong>, totalling <strong>₹2,18,000</strong>, and six unpaid expenses. The current employees joined before the demo month. Explain that the implementation uses full monthly base salary. It does not prorate for attendance or calculate statutory deductions.</p>
+<h3>6. Finance — 45 seconds</h3>
+<p>Show procurement and payroll expenses alongside manual expenses. Mark one payable paid. Explain cash collected, cash paid out and net cash movement. Net cash movement is not profit.</p>
+<h3>7. Role-based access — 45 seconds</h3>
+<p>Sign out. Select Staff on the login screen and sign in. Staff sees Overview, Inventory and Sales. HR, Finance and Procurement are absent. The server also refuses forbidden requests, even if someone tries to bypass the menu.</p>
+<h3>8. Close — 30 seconds</h3>
+<p>“This project demonstrates how a common data store and defined workflows can keep departments consistent. The next stage would add statutory accounting, more detailed payroll, multiple warehouses and external integrations, along with the operational controls required for deployment.”</p>
+<h2>Useful backup demonstrations</h2>
+<ul>
+<li><strong>Insufficient stock:</strong> create a sale for 100 USB-C hubs. Confirmation is rejected and no stock is partially deducted.</li>
+<li><strong>Cancellation:</strong> confirm an unpaid order, then cancel it. Stock returns to the earlier balance.</li>
+<li><strong>Duplicate receipt:</strong> a received purchase no longer offers Receive stock. The API rejects a repeated receipt too.</li>
+<li><strong>Duplicate payroll:</strong> running the same month again reports that all eligible employees already have payroll.</li>
+<li><strong>Persistence:</strong> restart the server, sign in again, and show that business records remain.</li>
+</ul>
+<h2>Viva questions and short answers</h2>
+<p><strong>1. What is ERP?</strong> Enterprise Resource Planning combines departmental workflows and records in one business application.</p>
+<p><strong>2. Why does an SMB need it?</strong> Separate spreadsheets often duplicate records. A shared system links transactions and makes reports easier to reconcile.</p>
+<p><strong>3. What is MERN?</strong> MongoDB stores documents, Express defines the backend API, React builds the interface, and Node runs server-side JavaScript. Demo mode substitutes a local JSON persistence adapter for MongoDB only.</p>
+<p><strong>4. How are modules connected?</strong> Business commands update related records together. For example, a purchase receipt changes product stock, records stock movements and creates a finance payable.</p>
+<p><strong>5. What is RBAC?</strong> Role-Based Access Control. The server maps each role to allowed modules and checks the permission on each command. It also filters returned data.</p>
+<p><strong>6. Why not rely on hiding buttons?</strong> A user could call the API directly. Server-side permission checks enforce the restriction independently of the interface.</p>
+<p><strong>7. How do you prevent overselling?</strong> The server checks every order line inside the serialized business operation. MongoDB mode uses a transaction plus a shared revision write, so competing confirmations cannot both consume the same balance.</p>
+<p><strong>8. Why is a replica set required?</strong> MongoDB multi-document transactions need a replica set or sharded deployment. The included development setup uses a single-node replica set.</p>
+<p><strong>9. Why store money as paise?</strong> Integer paise avoids accumulating floating-point errors in prices, totals and expenses. The UI formats those integers as rupees.</p>
+<p><strong>10. Is the dashboard truly real time?</strong> It refreshes after local actions and polls every 15 seconds. It does not use WebSockets or streaming updates.</p>
+<p><strong>11. Is this full accounting software?</strong> No. Finance implements expenses, receivables and cash reporting. It is not a double-entry general ledger or statutory accounting system.</p>
+<p><strong>12. Is tax/GST fully implemented?</strong> No. The sales invoice has a configurable demonstration tax percentage. It is not a legal GST invoice or return. Procurement excludes tax.</p>
+<p><strong>13. Is payroll linked to attendance?</strong> Both share employee records, but this basic payroll uses full base salary and does not calculate attendance deductions.</p>
+<p><strong>14. How are passwords protected?</strong> Passwords use a random salt and scrypt. The API never returns the password hash. Sessions use HttpOnly cookies and a CSRF token.</p>
+<p><strong>15. What prevents duplicates?</strong> Unique SKUs and employee codes, one attendance record per employee/day, one payroll record per employee/month, and status checks on confirmation, receipt and payment.</p>
+<p><strong>16. What does the audit log show?</strong> Successful business commands, actor, reference and timestamp. It is not a tamper-proof or regulatory audit system.</p>
+<p><strong>17. What are the scalability limits?</strong> The demo loads a small workspace snapshot and serializes writes. A larger version needs paginated queries, database aggregations, more granular concurrency control, shared session storage and monitoring.</p>
+<p><strong>18. Why is there a local demo adapter?</strong> It makes the same workflows presentable without installing MongoDB. It persists data to disk and is explicitly labelled. It is not a claim that JSON files are MongoDB.</p>
+<p><strong>19. What did you test?</strong> Read <code>VALIDATION.md</code> for the exact executed checks. They include cross-module workflows, permissions, duplicate prevention and competing stock confirmations.</p>
+<p><strong>20. What would you add next?</strong> Refunds, partial receipts, statutory payroll/accounting, additional warehouses and external integrations, then a production security and deployment review.</p>
+<h2>Proposal-to-implementation checklist</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement in original slides</th>
+<th>Implementation</th>
+<th>Relevant source</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Inventory and reorder alerts</td>
+<td>Product management, low-stock filter, movement ledger</td>
+<td><code>domain.js</code>, inventory screen</td>
+</tr>
+<tr>
+<td>Order processing and invoicing</td>
+<td>Draft, confirm, pay, cancel, print invoice</td>
+<td>Order commands, Sales screen</td>
+</tr>
+<tr>
+<td>Employee records and attendance</td>
+<td>Employee form, active status, daily attendance</td>
+<td>Employee/attendance commands</td>
+</tr>
+<tr>
+<td>Expense tracking and reporting</td>
+<td>Payables, payments, receivables, cash summary</td>
+<td>Expense commands, Finance screen</td>
+</tr>
+<tr>
+<td>Vendors and purchase orders</td>
+<td>Vendor form, PO creation, approval, receipt</td>
+<td>Purchase commands</td>
+</tr>
+<tr>
+<td>Role-based dashboards</td>
+<td>Five roles, filtered data and server authorization</td>
+<td><code>security.js</code>, <code>view()</code></td>
+</tr>
+<tr>
+<td>Automatic payroll entries</td>
+<td>Monthly salary and corresponding payable</td>
+<td><code>payroll.run</code></td>
+</tr>
+<tr>
+<td>Analytics and notifications</td>
+<td>KPI calculations, seven-day chart, low-stock and pending-work alerts</td>
+<td>Dashboard</td>
+</tr>
+<tr>
+<td>Shared source of truth</td>
+<td>One selected backend store, atomic commands</td>
+<td><code>store.js</code></td>
+</tr>
+<tr>
+<td>MERN stack</td>
+<td>React + Express + Node + configurable MongoDB</td>
+<td>Package and server setup</td>
+</tr>
+<tr>
+<td>External integrations excluded</td>
+<td>No payment/accounting integration</td>
+<td>Documented future work</td>
+</tr>
+</tbody></table>
+<section class="closing-section"><h2>Tanglish explanation for practice</h2>
+<p>“Indha project-la inventory, sales, HR, finance, procurement ellame ore system-la connect pannirukkom. Oru sale confirm panna stock automatic-ah koraiyum. Purchase order receive panna stock increase aagum, Finance-la expense create aagum. Owner-ku full access irukkum; staff-ku avanga work-ku thevaiyana modules mattum access irukkum. Idhanaala departments-ku naduvula manual-ah data copy panna thevai koraiyum.”</p>
+<p>“Demo mode-la local file use pannrom. MongoDB connection configure pannina actual MERN database mode-la run aagum. Rendulayum same business rules and API use aagudhu.”</p>
+</section></body></html>

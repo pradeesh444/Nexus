@@ -1,0 +1,21 @@
+NEXUS ERP — PRADEESH A — PRESENTATION PACKAGE
+
+1. Install Node.js 22 LTS or newer if needed: https://nodejs.org
+2. Extract this ZIP.
+3. Open Terminal / PowerShell inside the nexus-erp folder.
+4. Run: npm ci
+5. Run: npm start
+6. Open: http://localhost:4000
+
+LOGIN: owner@nexus.demo
+PASSWORD: Demo@12345
+
+Keep the terminal open during the demo.
+Use Start-Windows.bat or bash Start-Mac.command as an alternative.
+
+Begin with README.md for setup and troubleshooting.
+Presentation and demo guide are in docs/.
+
+Default startup is persistent Local demo mode.
+MongoDB mode is included and tested; setup is in README.md.
+The first dependency installation needs internet.

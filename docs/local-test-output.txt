@@ -1,0 +1,34 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nexus-erp-academic-project@1.0.0 test
+> node --test tests/*.test.js
+
+▶ Integrated ERP workflows and access control
+  ✔ requires login and rejects invalid credentials (47.475216ms)
+  ✔ blocks missing CSRF and foreign origins (7.161546ms)
+  ✔ staff sees only permitted records and cannot mutate HR or stock (14.157673ms)
+  ✔ HR and accountant records are isolated (7.821249ms)
+  ✔ creates product with unique SKU and validates money (11.561026ms)
+  ✔ draft sale uses server prices without reducing stock (10.025645ms)
+  ✔ confirmation deducts stock once and forbids duplicate confirmation (11.282547ms)
+  ✔ paid sale enters cash totals and cannot be cancelled (12.10225ms)
+  ✔ overselling rejects atomically without partial deduction (12.058354ms)
+  ✔ cancellation restores confirmed stock exactly once (17.353883ms)
+  ✔ purchase receipt requires approval and posts inventory + payable (20.90493ms)
+  ✔ expense payment is recorded once (8.905836ms)
+  ✔ attendance updates existing day without duplicate records (16.914562ms)
+  ✔ payroll creates matching payables and blocks repeat months (11.107193ms)
+  ✔ concurrent confirmations cannot oversell (15.850415ms)
+  ✔ owner can create a user and passwords are never returned (88.451252ms)
+  ✔ audit records and stock movement ledger remain consistent (2.67836ms)
+  ✔ saved data survives a new repository connection (1.587769ms)
+  ✔ logout invalidates the session (3.793809ms)
+✔ Integrated ERP workflows and access control (734.003062ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 958.388589

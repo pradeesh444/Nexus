@@ -1,0 +1,35 @@
+Mongo replica set ready
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nexus-erp-academic-project@1.0.0 test
+> node --test tests/*.test.js
+
+▶ Integrated ERP workflows and access control
+  ✔ requires login and rejects invalid credentials (50.324042ms)
+  ✔ blocks missing CSRF and foreign origins (5.017497ms)
+  ✔ staff sees only permitted records and cannot mutate HR or stock (57.170309ms)
+  ✔ HR and accountant records are isolated (46.179668ms)
+  ✔ creates product with unique SKU and validates money (53.668832ms)
+  ✔ draft sale uses server prices without reducing stock (51.755304ms)
+  ✔ confirmation deducts stock once and forbids duplicate confirmation (82.233631ms)
+  ✔ paid sale enters cash totals and cannot be cancelled (51.277145ms)
+  ✔ overselling rejects atomically without partial deduction (62.275272ms)
+  ✔ cancellation restores confirmed stock exactly once (114.837345ms)
+  ✔ purchase receipt requires approval and posts inventory + payable (137.201843ms)
+  ✔ expense payment is recorded once (58.30783ms)
+  ✔ attendance updates existing day without duplicate records (81.908446ms)
+  ✔ payroll creates matching payables and blocks repeat months (65.70099ms)
+  ✔ concurrent confirmations cannot oversell (127.618768ms)
+  ✔ owner can create a user and passwords are never returned (125.266201ms)
+  ✔ audit records and stock movement ledger remain consistent (14.29422ms)
+  ✔ saved data survives a new repository connection (29.967654ms)
+  ✔ logout invalidates the session (12.892792ms)
+✔ Integrated ERP workflows and access control (1782.622221ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1976.149931

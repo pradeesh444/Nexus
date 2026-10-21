@@ -1,0 +1,15 @@
+{
+  "result": "Browser workflows passed",
+  "checks": [
+    "Owner login",
+    "All module routes",
+    "Sale draft-confirm-pay",
+    "Invoice rendering and PDF print",
+    "PO approve-receive",
+    "Attendance update",
+    "Payroll creation",
+    "Staff permissions",
+    "Mobile navigation and width"
+  ],
+  "errors": []
+}
